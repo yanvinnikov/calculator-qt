@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Calculator</class>
+ <widget class="QMainWindow" name="Calculator">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>340</width>
+    <height>378</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>340</width>
+    <height>378</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Calculator</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget
+{
+	background-color: white;
+	color: black;
+	font-family: Cascadia Mono;
+	font-size: 26px;
+}
+
+QPushButton#b_pin,
+QPushButton#b_reload
+{
+	font-size: 16px;
+}
+
+QPushButton#b_delete
+{
+	font-size: 23px;
+}
+
+QLabel#label
+{
+	font-size: 28px;
+}
+
+QLabel#history
+{
+	font-size: 18px;
+}
+
+QPushButton
+{
+	border: none;
+}
+
+QPushButton:hover
+{
+	background-color: rgba(255,85,0,0.2);
+}
+
+QPushButton:pressed
+{
+	background-color: rgba(255,85,0,0.3);
+}
+
+QLabel#history,
+QPushButton
+{
+	color: rgba(0, 0, 0, 0.6);
+}
+
+QPushButton#b_0,
+QPushButton#b_1,
+QPushButton#b_2,
+QPushButton#b_3,
+QPushButton#b_4,
+QPushButton#b_5,
+QPushButton#b_6,
+QPushButton#b_7,
+QPushButton#b_8,
+QPushButton#b_9,
+QPushButton#b_dot
+{
+	color: black;
+}
+
+QPushButton#b_plus,
+QPushButton#b_minus,
+QPushButton#b_divide,
+QPushButton#b_multiply,
+QPushButton#b_delete,
+QPushButton#b_clear,
+QPushButton#b_percent
+{
+	color: rgba(255,85,0,1.0);
+}
+
+QPushButton#b_enter
+{
+	background-color: rgba(255,85,0,1.0);
+	color: white;
+}
+
+QPushButton#b_enter:hover
+{
+	background-color: rgba(255,85,0,0.8);
+}
+
+QPushButton#b_enter:pressed
+{
+	background-color: rgba(255,85,0,0.7);
+}
+
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="8" column="4">
+       <widget class="QPushButton" name="b_br_open">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>(</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="5">
+       <widget class="QPushButton" name="b_multiply">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>×</string>
+        </property>
+        <property name="icon">
+         <iconset theme="edit-cut">
+          <normaloff>.</normaloff>.</iconset>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="4">
+       <widget class="QPushButton" name="b_dot">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>,</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="4">
+       <widget class="QPushButton" name="b_6">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="5">
+       <widget class="QPushButton" name="b_enter">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>=</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="3">
+       <widget class="QPushButton" name="b_sin">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>sin</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QPushButton" name="b_power">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>xʸ</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="b_inverse">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>inv</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1" colspan="5">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="10" column="4">
+       <widget class="QPushButton" name="b_9">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" colspan="5">
+       <widget class="QScrollArea" name="scrollArea">
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAsNeeded</enum>
+        </property>
+        <property name="horizontalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>338</width>
+           <height>64</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="history">
+            <property name="font">
+             <font>
+              <family>Cascadia Mono</family>
+              <pointsize>-1</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::RichText</enum>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+            </property>
+            <property name="textInteractionFlags">
+             <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QPushButton" name="b_factorial">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>x!</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" colspan="3">
+       <widget class="QSlider" name="opacity_slider">
+        <property name="minimum">
+         <number>30</number>
+        </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
+        <property name="value">
+         <number>100</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="5">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="1" colspan="5">
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="10" column="3">
+       <widget class="QPushButton" name="b_8">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="2">
+       <widget class="QPushButton" name="b_1">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" colspan="5">
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="5">
+       <widget class="QPushButton" name="b_br_close">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>)</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="5">
+       <widget class="QPushButton" name="b_tan">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>tan</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="3">
+       <widget class="QPushButton" name="b_ln">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>ln</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="2">
+       <widget class="QPushButton" name="b_clear">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>AC</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="5">
+       <widget class="QPushButton" name="b_plus">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="5">
+       <widget class="QPushButton" name="b_minus">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>−</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="1">
+       <widget class="QPushButton" name="b_sqrt">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>√x</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="b_pin">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>pin</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="3">
+       <widget class="QPushButton" name="b_delete">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>⌫</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="4">
+       <widget class="QPushButton" name="b_cos">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>cos</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="2">
+       <widget class="QPushButton" name="b_4">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="3">
+       <widget class="QPushButton" name="b_5">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="5">
+       <widget class="QPushButton" name="b_divide">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>÷</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="5">
+       <widget class="QPushButton" name="b_reload">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="mouseTracking">
+         <bool>true</bool>
+        </property>
+        <property name="text">
+         <string>reload</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="2">
+       <widget class="QPushButton" name="b_lg">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>lg</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="3">
+       <widget class="QPushButton" name="b_2">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" colspan="5">
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::PlainText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="margin">
+         <number>10</number>
+        </property>
+        <property name="textInteractionFlags">
+         <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QPushButton" name="b_anglemode">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>deg</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="4">
+       <widget class="QPushButton" name="b_3">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>3</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="4">
+       <widget class="QPushButton" name="b_percent">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>%</string>
+        </property>
+       </widget>
+      </item>
+      <item row="12" column="1">
+       <widget class="QPushButton" name="b_pi">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>π</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="1">
+       <widget class="QPushButton" name="b_e">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>e</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="2">
+       <widget class="QPushButton" name="b_7">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="3">
+       <widget class="QPushButton" name="b_0">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QPushButton" name="b_1divx">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>x⁻¹</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="2">
+       <widget class="QPushButton" name="b_floor">
+        <property name="font">
+         <font>
+          <family>Cascadia Mono</family>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>flr</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>b_0</tabstop>
+  <tabstop>b_1</tabstop>
+  <tabstop>b_2</tabstop>
+  <tabstop>b_3</tabstop>
+  <tabstop>b_4</tabstop>
+  <tabstop>b_5</tabstop>
+  <tabstop>b_6</tabstop>
+  <tabstop>b_7</tabstop>
+  <tabstop>b_8</tabstop>
+  <tabstop>b_9</tabstop>
+  <tabstop>b_dot</tabstop>
+  <tabstop>b_plus</tabstop>
+  <tabstop>b_minus</tabstop>
+  <tabstop>b_multiply</tabstop>
+  <tabstop>b_divide</tabstop>
+  <tabstop>b_percent</tabstop>
+  <tabstop>b_delete</tabstop>
+  <tabstop>b_clear</tabstop>
+  <tabstop>b_e</tabstop>
+  <tabstop>b_pi</tabstop>
+  <tabstop>b_factorial</tabstop>
+  <tabstop>b_sqrt</tabstop>
+  <tabstop>b_power</tabstop>
+  <tabstop>b_lg</tabstop>
+  <tabstop>b_ln</tabstop>
+  <tabstop>b_br_open</tabstop>
+  <tabstop>b_br_close</tabstop>
+  <tabstop>b_tan</tabstop>
+  <tabstop>b_cos</tabstop>
+  <tabstop>b_sin</tabstop>
+  <tabstop>b_anglemode</tabstop>
+  <tabstop>b_enter</tabstop>
+  <tabstop>scrollArea</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

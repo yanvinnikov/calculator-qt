@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/js" lang="JavaScript">
+        <file>rs/funcs.js</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/js" lang="JavaScript"/>
+    <qresource prefix="/">
+        <file>rs/core.js</file>
+    </qresource>
+</RCC>
